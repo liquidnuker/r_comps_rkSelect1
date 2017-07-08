@@ -34,15 +34,15 @@ export default class RkSelect1 extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Your favorite flavor is: ' + this.state.selected.itemName);
+    console.log("submit: " + this.state.selected.itemName);
     event.preventDefault();
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <p>{this.state.items.itemName}</p>
-        <select value={this.state.items.selected} onChange={this.handleChange}>
+        <p>{this.state.selected.itemName}</p>
+        <select value={this.state.selected.itemName} onChange={this.handleChange}>
           
           {this.state.items.map((i) =>
             <option value={i.itemName}>{i.itemName}</option>
