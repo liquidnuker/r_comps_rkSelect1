@@ -1,0 +1,82 @@
+// 
+// ==================================================/
+body {
+  @extend %system_normal--400;
+}
+
+h1 {
+  display: none;
+}
+
+.item-id {
+  background-color: #ccc;
+}
+
+// select + button
+// rkselect1
+// ==================================================/
+.rkselect1 {
+  // requires select-css
+  // see mq below for height
+
+  .rkselect1_btn {
+    position:relative; 
+    padding: 0px 6px 0px 6px; /* trbl */
+    left: -1px;
+    border: 1px solid #666;
+    background: #999;  
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #000;
+    }
+  }  
+}
+
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .rkselect1 {
+    height: auto;
+  }
+
+  .custom-select1_01 {
+    width: 100%;
+  }
+
+  .rkselect1_btn {
+    // for centering
+    width: 60%;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+// *mobile landscape (480x320)
+@include mq($from: mobileLandscape) {
+  .rkselect1 {
+    height: 30px;
+  }
+
+  .rkselect1_btn {
+    // to remove centering
+    width: auto;
+    display: inline-block;
+    margin: 0;
+  }
+
+  input[type=text],
+  .rkselect1_btn,
+  .custom-select1_01 {
+    height: inherit;
+    vertical-align: text-bottom;
+    // width: 70%;  
+  }
+
+  .custom-select1_01 {
+    margin-left: -1px;
+    width: 15%;
+  }
+}

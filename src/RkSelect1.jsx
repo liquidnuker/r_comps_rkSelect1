@@ -41,15 +41,20 @@ export default class RkSelect1 extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <p>{this.state.selected.itemName}</p>
-        <select value={this.state.selected.itemName} onChange={this.handleChange}>
-          
+      <p>{this.state.selected.itemName}</p>
+
+      <div className="rkselect1">
+        <div className="custom-select1_01">
+          <select value={this.state.selected.itemName} onChange={this.handleChange}>
+
           {this.state.items.map((i) =>
             <option value={i.itemName}>{i.itemName}</option>
           )}
 
-        </select>
-        <input type="submit" value="Submit" />
+          </select>
+        </div><input className="rkselect1_btn" type="submit" value="Submit" />
+      </div>
+
       </form>
     );
   }
