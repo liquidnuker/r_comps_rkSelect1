@@ -1,6 +1,6 @@
 import "./styles/main.scss";
 
-import RkSelect1 from './RkSelect1_wrap.jsx';
+import RkSelect1 from './components/RkSelect1_wrap.jsx';
 
 ReactDOM.render(
   <RkSelect1 />,
