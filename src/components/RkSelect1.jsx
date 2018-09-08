@@ -16,7 +16,8 @@ export default class RkSelect1 extends React.Component {
       ],
       selected: {
         itemName: "item1"
-      }
+      },
+      submitted: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,12 +30,12 @@ export default class RkSelect1 extends React.Component {
         itemName: event.target.value
       }
     });
-    console.log(event.target.value);
-
   }
 
   handleSubmit(event) {
-    console.log("submit: " + this.state.selected.itemName);
+    this.setState(prevState => ({
+      submitted: this.state.selected.itemName
+    }));
     event.preventDefault();
   }
 
@@ -52,7 +53,9 @@ export default class RkSelect1 extends React.Component {
           )}
 
           </select>
-        </div><input className="rkselect1_btn" type="submit" value="Submit" />
+        </div>
+        <input className="rkselect1_btn" type="submit" value="Submit" />
+        <span>Send: {this.state.submitted}</span>
       </div>
 
       </form>
